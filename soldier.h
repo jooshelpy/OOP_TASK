@@ -20,7 +20,7 @@ class Soldier
 };
 
 /* derived classes */
-class Offensive:Soldier
+class Offensive:public Soldier
 {
     public:
         Offensive(string name_,int damageValue_);
@@ -31,7 +31,7 @@ class Offensive:Soldier
 
 };
 
-class Defensive:Soldier
+class Defensive:public Soldier
 {
     public:
         Defensive(string name_,int damageValue_);
@@ -42,7 +42,7 @@ class Defensive:Soldier
 
 };
 
-class Adaptable:Soldier
+class Adaptable:public Soldier
 {
     public:
         Adaptable(string name_,int damageValue_);
