@@ -5,18 +5,21 @@
 #include <string>
 using namespace std;
 
+/* abstract class */
 class Soldier
 {
     protected: 
         string name;
-        int damageValue;
         string ability;
+        int damageValue;
+
     public:
         virtual int get_damageV()=0;
         virtual void set_damageV(int value)=0;
-        virtual void useAbility();
+        virtual void useAbility()=0;
 };
 
+/* derived classes */
 class Offensive:Soldier
 {
     public:

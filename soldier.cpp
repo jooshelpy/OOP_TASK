@@ -44,6 +44,6 @@ void Adaptable::set_damageV(int value){
     this->damageValue = value;
 }
 void Adaptable::useAbility(){
-    this->ability = "Creative";
-    std::cout << "i am a creative soldier\nI can face threats using my critical thinking\n";
+    this->ability = "sniper";
+    std::cout << "i am a sniper\nI can kill targets easily on distance\n";
 }
