@@ -1,57 +1,40 @@
 #ifndef _VEHICLE_H_
 #define _VEHICLE_H_
 
+#include <iostream>
+using namespace std;
 
-class vehicle
+
+class Vehicle
 {
     protected:
-    string name;
-    string special_ability;
-    string state;  /*this is in order to report*/
+        string type;
+        string special_ability;
+        string state = "PEACE";  /*this is in order to report*/
 
     public:
-    virtual void use_ability()=0;
-    virtual void moving()=0;
-    virtual void set_ability(string special_ability)=0;
-    virtual void get_ability()=0;
-    virtual void set_state(string state)=0;
-    virtual void get_state()=0;
-
-
-
+        Vehicle(string type);
+        virtual void use_ability()=0;
+        virtual string get_ability()=0;
+        void move();
+        void set_state(string state);
+        string get_state();
+        void report();
 
 };
 
-class tank:public vehicle
+class Tank: Vehicle
 {
     public:
-    tank(string name, string special_ability);
-    void use_ability();
-    void moving();
-
-    void set_ability(string special_ability); /* this function is used if we want to change the special ability
-                                                 * after first setting it with the constructor */
-    void get_ability();
-    void set_state(string state);
-    void get_state();
-
-
-
+        void use_ability();
+        string get_ability();
 };
 
-class helicopter:public vehicle
+class Helicopter: Vehicle
 {
     public:
-    helicopter(string name, string special_ability);
-    void use_ability();
-    void moving();
-
-    void set_ability(string special_ability);
-    void get_ability();
-    void set_state(string state);
-    void get_state();
-    
-
+        void use_ability();
+        string get_ability();
 };
 
 

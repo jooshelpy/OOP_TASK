@@ -1,87 +1,51 @@
 #include "vehicle.h"
 
-#include <iostream>
-using namespace std;
 
-
-tank::tank(string name, string special_ability)
+Vehicle::Vehicle(string type)
 {
-    this->name=name;
-    this->special_ability=special_ability;
+    this->type=type;
 }
 
-void tank::use_ability()
+void Vehicle::move()
 {
-    cout<<"I am shooting\n";
+    cout<<"mooooooooooove\n";
+    Vehicle::set_state("PEACE");
+}
+
+void Vehicle::set_state(string state){
+    this->state = state;
+}
+
+string Vehicle::get_state(){
+    return(this->state);
+}
+
+void Vehicle::report(){
+    cout << "Type: " << this->type << endl;
+    cout << "Functionality: " << this->special_ability << endl;
+}
+/***********************************************************************************************************/
+
+void Tank::use_ability()
+{
+    cout<<"Fireeeeeeeeeeeeeeeeeeeeeeeeeeee All\n";
     cout<<"booooom\n";
-    tank::set_state("WAR");
-}
-void tank::moving()
-{
-    cout<<"I am moooooving";
-    tank::set_state("PEACE");
-
+    Tank::set_state("WAR");
 }
 
-void tank::set_ability(string special_ability)
+string Tank::get_ability()
 {
-   this->special_ability=special_ability;
-
+    return (this->special_ability);
 }
-void tank::get_ability()
-{
-   cout<<special_ability;
-
-}
-void tank::set_state(string state)
-{
-    this->state=state;
- 
-}
-void tank::get_state()
-{
-     cout<<state;
-}
-
 /****************************************************************************************************************/
 
-helicopter::helicopter(string name, string special_ability)
+void Helicopter::use_ability()
 {
-    this->name=name;
-    this->special_ability=special_ability;
+    cout<<"Transporting\n";
+    Helicopter::set_state("PEACE");
 }
 
-void helicopter::use_ability()
+string Helicopter::get_ability()
 {
-    cout<<"I am shooting\n";
-    cout<<"booooom\n";
-    helicopter::set_state("WAR");
-
-
-}
-void helicopter::moving()
-{
-    cout<<"I am moooooving";
-    helicopter::set_state("PEACE");
-
-}
-
-void helicopter::set_ability(string special_ability)
-{
-   this->special_ability=special_ability;
-
-}
-void helicopter::get_ability()
-{
-   cout<<special_ability;
-
-}
-void helicopter::set_state(string state)
-{
-    this->state=state;
- 
-}
-void helicopter::get_state()
-{
-     cout<<state;
+    return(this->special_ability);
 }

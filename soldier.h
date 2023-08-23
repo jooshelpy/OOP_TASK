@@ -12,7 +12,7 @@ class Soldier
         string name;
         string ability;
         int damageValue;
-        string state;  /*this is in order to report*/
+        string state = "PEACE";  /*this is in order to report*/
 
 
     public:
@@ -20,7 +20,8 @@ class Soldier
         virtual void set_damageV(int value)=0;
         virtual void useAbility()=0;
         virtual void set_state(string state)=0;
-        virtual void get_state()=0;
+        virtual string get_state()=0;
+        void attack();
 };
 
 /* derived classes */
@@ -32,9 +33,8 @@ class Offensive:public Soldier
         void set_damageV(int value);
         void useAbility();
         void set_state(string state);
-        void get_state();
-        
-
+        string get_state();
+        void attack();
 };
 
 class Defensive:public Soldier
@@ -45,7 +45,9 @@ class Defensive:public Soldier
         void set_damageV(int value);
         void useAbility();
         void set_state(string state);
-        void get_state();
+        string get_state();
+        void attack();
+
         
 
 };
@@ -58,7 +60,9 @@ class Adaptable:public Soldier
         void set_damageV(int value);
         void useAbility();
         void set_state(string state);
-        void get_state();
+        string get_state();
+        void attack();
+
 };
 
 #endif
