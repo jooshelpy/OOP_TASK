@@ -7,26 +7,26 @@ void Army::addSoldier(Soldier *s1){
 void Army::addVehicle(Vehicle *v1){
     vehicles.push_back(v1);
 }
+void Army::attackCommand(){
+    for (int i = 0; i < soldiers.size(); i++){
+        soldiers[i]->attack();
+    }
+}
 
-void Army::issueCommand(string command){
-    if (command == "attack"){
-        for (int i = 0; i < soldiers.size(); i++){
-            soldiers[i]->attack();
-        }
+void Army::moveCommand(){
+    for (int i = 0; i < soldiers.size(); i++){
+        vehicles[i]->move();
     }
-    else if (command == "move"){
-        for (int i = 0; i < soldiers.size(); i++){
-            vehicles[i]->move();
-        }
+}
+
+void Army::reportCommand(){
+    cout << "Report for all soldiers in the Army\n";
+    for (int i = 0; i < soldiers.size(); i++){
+        soldiers[i]->report();
     }
-    else if (command == "report"){
-        cout << "Report for all soldiers in the Army\n";
-        for (int i = 0; i < soldiers.size(); i++){
-            soldiers[i]->report();
-        }
-        cout << endl;
-        for (int i = 0; i < vehicles.size(); i++){
-            vehicles[i]->report();
-        }
+    cout << endl;
+    cout << "Report for all Vehicles in the Army\n";
+    for (int i = 0; i < vehicles.size(); i++){
+        vehicles[i]->deploy();
     }
 }
