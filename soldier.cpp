@@ -1,76 +1,58 @@
 #include "soldier.h"
 
-Offensive::Offensive(string name_, int damageValue_){
+
+Soldier::Soldier(string name_, string ability_){
     this->name = name_;
-    this->damageValue = damageValue_;
+    this->ability = ability_;
 }
-int Offensive::get_damageV(){
+
+void Soldier::report(){
+    cout << "Name: " << this->name << endl;
+    cout << "Ability: " << this->ability << endl;
+}
+
+void Soldier::attack(){
+    cout << "Attaaaaaaaaaaaaaaaaaaaaaaaaack\n";
+    cout << "kill the Enemieeeeeeeeeeeeeeeeeeeeeeeeeeeeees\n";
+    Soldier::set_state("WAR");
+}
+
+void Soldier::defend(){
+    cout << "Hold on army\n";
+    cout << "Defend\n";
+}
+
+int Soldier::get_damageV(){
     return (this->damageValue);
 }
-void Offensive::set_damageV(int value){
+
+void Soldier::set_damageV(int value){
     this->damageValue = value;
 }
+
+void Soldier::set_state(string state)
+{
+    this->state=state;
+}
+
+string Soldier::get_state(){
+    return(this->state);
+}
+/*********************************************************************************************************/
+
 void Offensive::useAbility(){
     this->ability = "knight";
     std::cout << "i am a Knight\nI can flank an enemy\n";
 }
-void Offensive::set_state(string state)
-{
-    this->state=state;
- 
-}
-void Offensive::get_state()
-{
-     cout<<state;
-}
 /*********************************************************************************************************/
 
-Defensive::Defensive(string name_, int damageValue_){
-    this->name = name_;
-    this->damageValue = damageValue_;
-}
-
-int Defensive::get_damageV(){
-    return (this->damageValue);
-}
-void Defensive::set_damageV(int value){
-    this->damageValue = value;
-}
 void Defensive::useAbility(){
     this->ability = "Archer";
     std::cout << "i am an Archer\nI can through fire arrows and make fire in enemies\n";
 }
-void Defensive::set_state(string state)
-{
-    this->state=state;
- 
-}
-void Defensive::get_state()
-{
-     cout<<state;
-}
 /***********************************************************************************************************/
 
-Adaptable::Adaptable(string name_, int damageValue_){
-    this->name = name_;
-    this->damageValue = damageValue_;
-}
-int Adaptable::get_damageV(){
-    return (this->damageValue);
-}
-void Adaptable::set_damageV(int value){
-    this->damageValue = value;
-}
 void Adaptable::useAbility(){
     this->ability = "sniper";
     std::cout << "i am a sniper\nI can kill targets easily on distance\n";
-}
-void Adaptable::set_state(string state)
-{
-    this->state=state;
- 
-}
-void Adaptable ::get_state()
-{
-     cout<<state;
 }
