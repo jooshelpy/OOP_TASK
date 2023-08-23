@@ -8,30 +8,30 @@ using namespace std;
 #include "command.h"
 
 
-void attack (Soldier arr[10])
+void attack (Soldier* arr[10])
 {
     for(int i=0;i<10;i++)
     {
-        arr[i].useAbility();
+        arr[i]->useAbility();
 
     }
 }
 
-void move (vehicle arr[10])
+void move (vehicle* arr[10])
 {
     for(int i=0;i<10;i++)
     {
-        arr[i].moving();
+        arr[i]->moving();
 
     }
 }
 
-void report(Soldier arr[10], vehicle array[10])
+void report(Soldier* arr[10], vehicle* array[10])
 {
     for(int i=0;i<10;i++)
     {
-        arr[i].get_state();
-        array[i].get_state();
+        arr[i]->get_state();
+        array[i]->get_state();
 
     }
 }
