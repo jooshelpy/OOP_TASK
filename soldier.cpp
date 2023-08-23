@@ -1,11 +1,5 @@
 #include "soldier.h"
 
-
-Soldier::Soldier(string name_, string ability_){
-    this->name = name_;
-    this->ability = ability_;
-}
-
 void Soldier::report(){
     cout << name << " uses " << ability << " ability!\n";
 }
@@ -38,6 +32,10 @@ string Soldier::get_state(){
     return(this->state);
 }
 /*********************************************************************************************************/
+Offensive::Offensive(string name_, string ability_){
+    this->name = name_;
+    this->ability = ability_;
+}
 
 void Offensive::useAbility(){
     this->ability = "knight";
@@ -45,11 +43,21 @@ void Offensive::useAbility(){
 }
 /*********************************************************************************************************/
 
+Defensive::Defensive(string name_, string ability_){
+    this->name = name_;
+    this->ability = ability_;
+}
+
 void Defensive::useAbility(){
     this->ability = "Archer";
     cout << "i am an Archer\nI can through fire arrows and make fire in enemies\n";
 }
 /***********************************************************************************************************/
+
+Adaptable::Adaptable(string name_, string ability_){
+    this->name = name_;
+    this->ability = ability_;
+}
 
 void Adaptable::useAbility(){
     this->ability = "sniper";

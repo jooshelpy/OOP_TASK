@@ -14,7 +14,6 @@ class Vehicle
         string state = "PEACE";  /*this is in order to report*/
 
     public:
-        Vehicle(string type, string special_ability, int capacity);
         virtual void use_ability()=0;
         virtual string get_ability()=0;
         void move();
@@ -27,6 +26,7 @@ class Vehicle
 class Tank: Vehicle
 {
     public:
+        Tank(string type, string special_ability, int capacity);
         void use_ability();
         string get_ability();
 };
@@ -34,6 +34,7 @@ class Tank: Vehicle
 class Helicopter: Vehicle
 {
     public:
+        Helicopter(string type, string special_ability, int capacity);
         void use_ability();
         string get_ability();
 };

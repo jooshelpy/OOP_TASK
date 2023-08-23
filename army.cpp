@@ -7,6 +7,7 @@ void Army::addSoldier(Soldier *s1){
 void Army::addVehicle(Vehicle *v1){
     vehicles.push_back(v1);
 }
+
 void Army::attackCommand(){
     for (int i = 0; i < soldiers.size(); i++){
         soldiers[i]->attack();
