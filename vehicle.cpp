@@ -38,9 +38,9 @@ void tank::set_state(string state)
     this->state=state;
  
 }
-void tank::get_state(string state)
+void tank::get_state()
 {
-     this->state=state;
+     cout<<state;
 }
 
 /****************************************************************************************************************/
@@ -81,7 +81,7 @@ void helicopter::set_state(string state)
     this->state=state;
  
 }
-void helicopter::get_state(string state)
+void helicopter::get_state()
 {
-     this->state=state;
+     cout<<state;
 }
