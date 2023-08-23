@@ -10,7 +10,7 @@ class Army
 {
     private:
         std::vector<Soldier*> soldiers;  // vector to store the soldiers in 
-        std::vector<Vehicle*> vehicles;    
+        std::vector<Vehicle*> vehicles;  // vector to store the vehicles in  
     public: 
         void addSoldier(Soldier *s1);
         void addVehicle(Vehicle *v1);

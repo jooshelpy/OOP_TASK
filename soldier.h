@@ -16,7 +16,6 @@ class Soldier
 
 
     public:
-        Soldier(string name_,string ability);
         int get_damageV();
         void set_damageV(int value);
         virtual void useAbility()=0;
@@ -31,18 +30,21 @@ class Soldier
 class Offensive:public Soldier
 {
     public:
+        Offensive(string name_,string ability);
         void useAbility();
 };
 
 class Defensive:public Soldier
 {
     public:
+        Defensive(string name_,string ability);
         void useAbility();
 };
 
 class Adaptable:public Soldier
 {
     public:
+        Adaptable(string name_,string ability);
         void useAbility();
 };
 
