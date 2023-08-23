@@ -14,7 +14,9 @@ class Army
     public: 
         void addSoldier(Soldier *s1);
         void addVehicle(Vehicle *v1);
-
+        void attackCommand();
+        void moveCommand();
+        void reportCommand();
 };
 
 

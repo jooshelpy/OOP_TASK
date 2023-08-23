@@ -10,16 +10,17 @@ class Vehicle
     protected:
         string type;
         string special_ability;
+        int capacity;  // number of soldiers in it.
         string state = "PEACE";  /*this is in order to report*/
 
     public:
-        Vehicle(string type);
+        Vehicle(string type, string special_ability, int capacity);
         virtual void use_ability()=0;
         virtual string get_ability()=0;
         void move();
         void set_state(string state);
         string get_state();
-        void report();
+        void deploy();
 
 };
 

@@ -1,14 +1,20 @@
 #include "vehicle.h"
 
 
-Vehicle::Vehicle(string type)
+Vehicle::Vehicle(string type, string special_ability, int capacity)
 {
     this->type=type;
+    this->special_ability = special_ability;
+    this->capacity = capacity;
+}
+
+void Vehicle::deploy(){
+    cout << "Deploying " << type << " with capacity " << capacity << " soldiers.\n";
 }
 
 void Vehicle::move()
 {
-    cout<<"mooooooooooove\n";
+    cout<< this->type << "is moving\n";
     Vehicle::set_state("PEACE");
 }
 
@@ -20,10 +26,6 @@ string Vehicle::get_state(){
     return(this->state);
 }
 
-void Vehicle::report(){
-    cout << "Type: " << this->type << endl;
-    cout << "Functionality: " << this->special_ability << endl;
-}
 /***********************************************************************************************************/
 
 void Tank::use_ability()

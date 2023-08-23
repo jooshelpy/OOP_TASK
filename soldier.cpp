@@ -7,8 +7,7 @@ Soldier::Soldier(string name_, string ability_){
 }
 
 void Soldier::report(){
-    cout << "Name: " << this->name << endl;
-    cout << "Ability: " << this->ability << endl;
+    cout << name << " uses " << ability << " ability!\n";
 }
 
 void Soldier::attack(){
@@ -42,17 +41,17 @@ string Soldier::get_state(){
 
 void Offensive::useAbility(){
     this->ability = "knight";
-    std::cout << "i am a Knight\nI can flank an enemy\n";
+    cout << "i am a Knight\nI can flank an enemy\n";
 }
 /*********************************************************************************************************/
 
 void Defensive::useAbility(){
     this->ability = "Archer";
-    std::cout << "i am an Archer\nI can through fire arrows and make fire in enemies\n";
+    cout << "i am an Archer\nI can through fire arrows and make fire in enemies\n";
 }
 /***********************************************************************************************************/
 
 void Adaptable::useAbility(){
     this->ability = "sniper";
-    std::cout << "i am a sniper\nI can kill targets easily on distance\n";
+    cout << "i am a sniper\nI can kill targets easily on distance\n";
 }
